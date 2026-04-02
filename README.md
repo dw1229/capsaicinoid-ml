@@ -20,9 +20,12 @@ A machine learning pipeline for classifying capsaicinoid-related compounds into 
 - Saves the final dataset to `data/molecules.csv` (36 compounds × 152 features)
 
 
-Planned notebooks (to be added):
+### 02 — EDA & PCA (`02_EDA_and_PCA.ipynb`) — *in progress*
 
-- `02_EDA_and_PCA.ipynb` — Exploratory data analysis + PCA visualization
+- Exploratory data analysis and PCA dimensionality reduction (currently being developed)
+
+Planned:
+
 - `03_MLP_classifier.ipynb` — PyTorch MLP training & evaluation
 
 ## Tech Stack
