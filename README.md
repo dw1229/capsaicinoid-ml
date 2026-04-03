@@ -20,9 +20,14 @@ A machine learning pipeline for classifying capsaicinoid-related compounds into 
 - Saves the final dataset to `data/molecules.csv` (36 compounds × 152 features)
 
 
-### 02 — EDA & PCA (`02_EDA_and_PCA.ipynb`) — *in progress*
+### 02 — EDA & PCA (`02_EDA_and_PCA.ipynb`) - *in progress*
 
-- Exploratory data analysis and PCA dimensionality reduction (currently being developed)
+- Class distribution bar chart (balanced: 12 per class)
+- Feature correlation heatmap (top 20 by variance) — reveals high redundancy among molecular weight-related features
+- Boxplots of top 5 features by variance — only Ipc effectively separates classes; others overlap heavily
+- StandardScaler on train set (70/30 stratified split, 25 train / 11 test)
+- PCA analysis: PC1 explains ~37% variance, first 5 components cover >70%
+- Scree plot visualization
 
 Planned:
 
@@ -31,6 +36,5 @@ Planned:
 ## Tech Stack
 
 - **Data Collection**: PubChem PUG REST API, RDKit
-- **Data Processing**: pandas, NumPy
-
-Additional tools (scikit-learn, PyTorch, Plotly, etc.) will be added as notebooks 02 and 03 are developed.
+- **Data Processing / EDA**: pandas, NumPy, matplotlib, seaborn
+- **Dimensionality Reduction**: scikit-learn (StandardScaler, PCA)
