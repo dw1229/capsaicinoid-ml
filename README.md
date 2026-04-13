@@ -31,6 +31,8 @@ A machine learning pipeline for classifying capsaicinoid-related compounds into 
 - StandardScaler fit on train only
 - 2D PCA scatter plot for visualization
 
+![2D PCA Scatter](figures/pca_2d_scatter.png)
+
 Planned:
 
 - `03_classifier.ipynb` — PyTorch deep learning classifier (practice exercise)
