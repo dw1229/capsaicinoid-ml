@@ -1,8 +1,10 @@
-# Capsaicinoid Compound Classification with PCA & PyTorch MLP
+# Capsaicinoid Compound Classification
+
+**Author:** Dongwan Kim
 
 ## Project Overview
 
-A machine learning pipeline for classifying capsaicinoid-related compounds into 3 chemical families using molecular descriptors, PCA, and a PyTorch MLP classifier.
+A machine learning pipeline for classifying capsaicinoid-related compounds into 3 chemical families using molecular descriptors and Elastic Net feature selection.
 
 ### Compound Classes
 
@@ -19,22 +21,23 @@ A machine learning pipeline for classifying capsaicinoid-related compounds into 
 - Preprocesses features (drops zero-variance columns, handles NaN/inf)
 - Saves the final dataset to `data/molecules.csv` (36 compounds × 152 features)
 
-
-### 02 — EDA & PCA (`02_EDA_and_PCA.ipynb`) - *in progress*
+### 02 — EDA & Feature Selection (`02_EDA_and_PCA.ipynb`)
 
 - Class distribution bar chart (balanced: 12 per class)
-- Feature correlation heatmap (top 20 by variance) — reveals high redundancy among molecular weight-related features
-- Boxplots of top 5 features by variance — only Ipc effectively separates classes; others overlap heavily
-- StandardScaler on train set (70/30 stratified split, 25 train / 11 test)
-- PCA analysis: PC1 explains ~37% variance, first 5 components cover >70%
-- Scree plot visualization
+- Feature correlation heatmap (top 20 by variance) — high redundancy among molecular weight-related features
+- Boxplots of top 5 features by variance — only Ipc effectively separates classes
+- 70/30 stratified train/test split (split before any preprocessing to prevent data leakage)
+- Elastic Net feature selection: grid search over L1_ratio and C, reduces 165 features → 30
+- StandardScaler fit on train only
+- 2D PCA scatter plot for visualization
 
 Planned:
 
-- `03_MLP_classifier.ipynb` — PyTorch MLP training & evaluation
+- `03_classifier.ipynb` — PyTorch deep learning classifier (practice exercise)
+- Possible additional data analysis
 
 ## Tech Stack
 
 - **Data Collection**: PubChem PUG REST API, RDKit
 - **Data Processing / EDA**: pandas, NumPy, matplotlib, seaborn
-- **Dimensionality Reduction**: scikit-learn (StandardScaler, PCA)
+- **Feature Selection**: scikit-learn (Elastic Net LogisticRegression, StandardScaler, PCA)
