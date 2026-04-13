@@ -16,7 +16,7 @@ A machine learning pipeline for classifying capsaicinoid-related compounds into 
 
 ### 01 — Data Collection (`01_data_collection.ipynb`)
 
-- Fetches SMILES for 36 compounds from the PubChem PUG REST API
+- Fetches SMILES for 99 compounds from the PubChem PUG REST API
 - Converts SMILES to RDKit Mol objects and computes ~200 molecular descriptors
 - Preprocesses features (drops zero-variance columns, handles NaN/inf)
 - Saves the final dataset to `data/molecules.csv` (36 compounds × 152 features)
